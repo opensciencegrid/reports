@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-require("../config.php");
+require("config.php");
 
 //$start= "2013-06-01";
 $start= date("Y-m-d", time()-3600*24*182);
