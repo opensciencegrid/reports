@@ -1,5 +1,7 @@
 
 #TODO - I need to pass start/end date
 
-php pkireports/user.php
-php pkireports/host.php
+start=$(date +"%Y-%m-%d" --date="6 month ago")
+echo "report start date $start"
+php pkireports/user.php $start
+php pkireports/host.php $start

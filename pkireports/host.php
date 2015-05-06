@@ -2,9 +2,7 @@
 <?php
 require("config.php");
 
-//$start= "2013-06-01";
-$start= date("Y-m-d", time()-3600*24*182);
-echo "start date $start\n";
+$start = $argv[1];
 
 $con = mysqli_connect("localhost", $config["oim_db_user"], $config["oim_db_pass"], "oim");
 if(mysqli_connect_errno($con)) {
