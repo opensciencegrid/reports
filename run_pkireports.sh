@@ -1,7 +1,9 @@
+#!/bin/bash
 
-#TODO - I need to pass start/end date
-
+email=hayashis@iu.edu
 start=$(date +"%Y-%m-%d" --date="6 month ago")
-echo "report start date $start"
-php pkireports/user.php $start
-php pkireports/host.php $start
+end=$(date +"%Y-%m-%d")
+#echo $start "-- report start date $start"
+php pkireports/user.php $start | uuencode /tmp/pkireports.$start-to-$end.user.csv | mail -s "pki reports user certificate" $email
+php pkireports/host.php $start | uuencode /tmp/pkireports.$start-to-$end.host.csv | mail -s "pki reports host certificate" $email
+
